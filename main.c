@@ -6,22 +6,45 @@
 //* Antonio Meneghetti Faculdade      *
 //*************************************
 
-#include <iostream>
+#include <stdio.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
-int numero = 2;
-int *ponteiro = &numero;
-
-int main(int argc, char** argv) 
+int main()
 {
-	printf("insira um numero: "); //pede um numero ao usuario
+	//criacao e inicializacao das variaveis
+	int variavel1 = 1, variavel2 = 2;
+	char controle = 'n', descarga;
 	
-//	scanf("%i", &numero);
-	scanf("%i", ponteiro); //salva o valor
-
-//	printf("O numero inserido foi: %i!\n", numero);
-printf("O numero inserido foi: %i!\n", *ponteiro); //mostra o valor inserido na tela
+	//criacao dos ponteiros
+	int *ponteiro1, *ponteiro2;
 	
+	//enquanto
+	while(1)
+	{
+		//inicializacao dos ponteiros
+		ponteiro1 = &variavel1; //ponteiro1 recebe o endereco de variavel1
+		ponteiro2 = &variavel2; //ponteiro2 recebe o endereco de variavel2
+		
+		//exibe o valor contio em cada variavel a partir do endereco contido nos ponteiros
+		printf("\n variavel1 = %i", *ponteiro1);
+		printf("\n variavel2 = %i", *ponteiro2);
+		
+		//exibe a solicitacao de controle
+		printf("\n\n deseja finalizar o programa? (s/n)");
+		//efetua a leitura do comando
+		scanf("%c", &controle);
+		//se o comando indicar a finalizacao, finaliza o loop
+		if(controle == 's') break;
+		
+		//exibe a solicitacao de um valor
+		printf("\n digite um valor para a variavel1: ");
+		//efetua a leitura do valor e transfere o valor para a variavel1
+		scanf("%i", ponteiro1);
+		//exibe a solicitacao de um valor
+		printf("\n digite um valor para a variavel2: ");
+		//efetua a leitura do valor e transfere o valor para a variavel1
+		scanf("%i%c", ponteiro2, &descarga);
+	}
+	
+	//retorrna 0
 	return 0;
 }
