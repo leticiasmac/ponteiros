@@ -8,6 +8,15 @@
 
 #include <stdio.h>
 
+
+void swap(int *p1, int *p2)
+{
+	int aux;
+	aux = *p1;
+	*p1= *p2;
+	*p2 = aux;
+}
+
 int main()
 {
 	//criacao e inicializacao das variaveis
@@ -27,6 +36,13 @@ int main()
 		//exibe o valor contio em cada variavel a partir do endereco contido nos ponteiros
 		printf("\n variavel1 = %i", *ponteiro1);
 		printf("\n variavel2 = %i", *ponteiro2);
+		
+		//swap
+		swap(ponteiro1, ponteiro2);
+		
+		//exibe o valor contio em cada variavel a partir do endereco contido nos ponteiros
+		printf("\n variavel1 depois do swap = %i", *ponteiro1);
+		printf("\n variavel2 depois do swap = %i", *ponteiro2);
 		
 		//exibe a solicitacao de controle
 		printf("\n\n deseja finalizar o programa? (s/n)");
