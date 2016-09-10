@@ -6,22 +6,26 @@
 //* Antonio Meneghetti Faculdade      *
 //*************************************
 
-#include <iostream>
+#include <stdio.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
-int numero = 2;
-int *ponteiro = &numero;
-
-int main(int argc, char** argv) 
+int main ()
 {
-	printf("insira um numero: "); //pede um numero ao usuario
+	//criacao e inicializacao das variaveis e ponteiros
+	//char minha_string [] = {"1234567890"};
+	char minha_string [] = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
+	char *meu_ponteiro = &minha_string;
 	
-//	scanf("%i", &numero);
-	scanf("%i", ponteiro); //salva o valor
-
-//	printf("O numero inserido foi: %i!\n", numero);
-printf("O numero inserido foi: %i!\n", *ponteiro); //mostra o valor inserido na tela
+	//exibe o valor contido em cada posicao da string a partir do endereco contido no ponteiro
 	
+	do
+	{
+		printf("\n o meu_ponteiro aponta para o valor: %c\n", *meu_ponteiro);
+		meu_ponteiro ++;
+	}
+	while (*meu_ponteiro != '0');
+	
+	printf("\n o tamanho de minha_string eh: %i\n", sizeof (minha_string));
+	
+	//retorna 0
 	return 0;
 }
